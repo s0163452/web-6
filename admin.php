@@ -16,8 +16,8 @@
 // PHP хранит логин и пароль в суперглобальном массиве $_SERVER.
 // Подробнее см. стр. 26 и 99 в учебном пособии Веб-программирование и веб-сервисы.
 
-$db_user = 'u47566';   // Логин БД
-$db_pass = '8241937';
+$db_user = 'u47539';   // Логин БД
+$db_pass = '3906870';
 $db = new PDO('mysql:host=localhost;dbname=u47566', $db_user, $db_pass, array(
     PDO::ATTR_PERSISTENT => true
 ));
