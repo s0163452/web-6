@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-  $user = 'u47566';
-  $pass = '8241937';
-  $db = new PDO('mysql:host=localhost;dbname=u47566', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $user = 'u47539';
+  $pass = '3906870';
+  $db = new PDO('mysql:host=localhost;dbname=u47539', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
   if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
