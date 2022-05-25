@@ -18,7 +18,7 @@
 
 $db_user = 'u47539';   // Логин БД
 $db_pass = '3906870';
-$db = new PDO('mysql:host=localhost;dbname=u47566', $db_user, $db_pass, array(
+$db = new PDO('mysql:host=localhost;dbname=u47539', $db_user, $db_pass, array(
     PDO::ATTR_PERSISTENT => true
 ));
 $login = isset($_SERVER['PHP_AUTH_USER']) ? $_SERVER['PHP_AUTH_USER'] : '';
