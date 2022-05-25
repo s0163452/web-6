@@ -1,0 +1,56 @@
+//на случай, если админов несколько
+CREATE TABLE admin(
+    id INT(10) unsigned NOT NULL AUTO_INCREMENT,
+    login VARCHAR(128),
+    pass VARCHAR(255),
+    PRIMARY KEY(id)
+    );
+ 
+INSERT INTO admin VALUES ('admin', 'admin');
+
+//айди способностей
+SELECT  application6.*,
+        Superpowers6.superpowers as power
+FROM application6
+LEFT JOIN Superpowers6
+ON application6.id=Superpowers6.id;
+
+//инфа с названиями способностей
+SELECT  application6.*, 
+        SuperDef.name as power
+FROM application6
+INNER JOIN Superpowers6
+    on application6.id = Superpowers6.id
+INNER JOIN SuperDef 
+    on Superpowers6.superpowers = SuperDef.id;
+
+//способности
+SELECT  Superpowers6.id,
+        SuperDef.name as power
+FROM Superpowers6
+LEFT JOIN SuperDef
+ON Superpowers6.superpowers=SuperDef.id;
+
+//статистика по способностям(index)
+SELECT superpowers as superpower, COUNT(superpowers) as number_of_users
+            FROM Superpowers6 
+            GROUP BY superpowers;
+
+//статистика по способностям(names)
+SELECT SuperDef.name as superpower, COUNT(superpowers) as number_of_users
+            FROM Superpowers6 
+            LEFT JOIN SuperDef
+            ON Superpowers6.superpowers=SuperDef.id
+            GROUP BY superpowers;
+
+//вывод всей инфы в одну таблицу
+SELECT  application6.*, 
+                    SuperDef.name as power,
+                    users6.login
+            FROM application6
+            INNER JOIN Superpowers6
+                ON application6.id = Superpowers6.id
+            INNER JOIN SuperDef 
+                ON Superpowers6.superpowers = SuperDef.id
+            INNER JOIN users6 
+                ON users6.id = application6.id;
